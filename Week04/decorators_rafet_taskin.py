@@ -1,13 +1,11 @@
 import tracemalloc
 import time
-import functools
 
 def performance(func):
     performance.counter = 0
     performance.total_time = 0.0
     performance.total_mem = 0.0
-
-    @functools.wraps(func)
+    
     def wrapper(*args, **kwargs):
         tracemalloc.start()
         start_time = time.time()
